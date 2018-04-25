@@ -1,10 +1,10 @@
 import React from 'react';
 import './index.css';
 
-export default function Square() {
+export default function Square(props) {
     return (
         <button className='square'>
-            &nbsp;
+            {props.value}
         </button>
     );
 }

@@ -18,17 +18,33 @@ export default class Game extends React.Component {
     }
 
     getBoardWidth() {
-        let width;
+        let width, msg = 'Please enter board width';
         do {
-            width = prompt('Please enter board width');
+            width = prompt(msg);
+            try {
+                width = Number(width);
+                if (width < 1 || isNaN(width)) width = '';
+            } catch(e) {
+                width = '';
+                msg = 'Width can only be a number greater than 0';
+                console.log(e);
+            }
         } while(width === '');
         return width;
     }
 
     getBoardHeight() {
-        let height;
+        let height, msg = 'Please enter board height';
         do {
-            height = prompt('Please enter board height', '');
+            height = prompt(msg);
+            try {
+                height = Number(height);
+                if (height < 1 || isNaN(height)) height = '';
+            } catch(e) {
+                height = '';
+                msg = 'Height can only be a number greater than 0';
+                console.log(e);
+            }
         } while(height === '');
         return height;
     }
