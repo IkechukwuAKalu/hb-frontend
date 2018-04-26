@@ -57,10 +57,15 @@ export default class Game extends React.Component {
                         <Board
                             width={this.state.width}
                             height={this.state.height}
+                            onGameCompleted={this.showMoves.bind(this)}
                         />
                     </div>
                 </div>
             </div>
         );
+    }
+
+    showMoves(totalMoves) {
+        alert(`Total moves: ${totalMoves}`);
     }
 }
