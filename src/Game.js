@@ -10,6 +10,9 @@ export default class Game extends React.Component {
         this.state = { width, height };
     }
 
+    /**
+     * @returns an array containing the board width and height
+     */
     getBoardParams() {
         return [
             this.getBoardWidth(),
@@ -17,6 +20,9 @@ export default class Game extends React.Component {
         ];
     }
 
+    /**
+     * @returns the board's width
+     */
     getBoardWidth() {
         let width, msg = 'Please enter board width';
         do {
@@ -33,6 +39,9 @@ export default class Game extends React.Component {
         return width;
     }
 
+    /**
+     * @returns the board's height
+     */
     getBoardHeight() {
         let height, msg = 'Please enter board height';
         do {
@@ -65,6 +74,10 @@ export default class Game extends React.Component {
         );
     }
 
+    /**
+     * Show at the end of the game
+     * @param {Number} totalMoves - the total number of moves to get all characters 
+     */
     showMoves(totalMoves) {
         alert(`Total moves: ${totalMoves}`);
     }
